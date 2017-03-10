@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8">
+<title>reg</title>
+</head>
+<body>
+
+<img th:src="localhost:8080/static/images/logo.png">
+<form enctype="multipart/form-data" action="/userReg" method="post">
+    <table>
+        <tr>
+        	<td>首页</td>
+        	<td>测试</td>
+        </tr>
+        <tr>
+            <td><label for="name">账号：</label></td>
+            <td><input type="text" id="name" name="name" /></td>
+        </tr>
+        <tr>
+            <td><label for="txtpswd">密码：</label></td>
+            <td><input type="password" id="pwd" name="pwd" /></td>
+        </tr>
+        <tr>
+            <td colspan=2>
+                <input type="reset" />
+                <input type="submit" />
+            </td>
+        </tr>
+    </table>
+</form> 
+
+</body>
+</html>

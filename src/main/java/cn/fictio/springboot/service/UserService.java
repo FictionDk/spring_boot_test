@@ -25,4 +25,18 @@ public class UserService {
 		}
 		return null;
 	}
+
+	public User login(User u) {
+		User user = userDao.findUserByUserName(u.getUserName());
+		if(user == null){
+			return null;
+		}
+		if(user.getPwd().equals(u.getPwd())){
+			return user;
+		}else{
+			return null;
+		}
+		
+		
+	}
 }

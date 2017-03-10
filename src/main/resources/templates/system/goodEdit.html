@@ -1,0 +1,70 @@
+<!DOCTYPE html>  
+<html xmlns:th="http://www.thymeleaf.org"  
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">  
+<head>  
+    <title>test</title>  
+</head>
+<body>
+	<div th:fragment="content" th:remove="tag">
+	
+	<div class="row clearfix" style="margin-top: 30px;">
+		<div class="col-md-12 column">
+			<ul class="breadcrumb">
+				<li>
+					 <a href="#">商品</a>
+				</li>
+				<li class="active">
+					 添加商品
+				</li>
+				<li>
+					<a th:href="@{/goodList}">商品列表</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="col-md-12 column">
+			<form role="form" action="@{/goodAdd}">
+				<div class="form-group">
+					 <label for="goodName">商品名称</label><input type="text" class="form-control" id="goodName" />
+				</div>
+				<div class="form-group">
+					 <label for="goodPrice">销售价格</label><input type="text" class="form-control" id="goodPrice" />
+				</div>
+				<div class="form-group">
+					 <label for="costPrice">成本价格</label><input type="text" class="form-control" id="costPrice" />
+				</div>
+				<div class="form-group">
+					 <label for="context">商品简介</label><input type="text" class="form-control" id="context" />
+				</div>
+				<div class="form-group">
+					 <label for="storeNums">商品库存</label><input type="text" class="form-control" id="storeNums" />
+				</div>
+				<div class="checkbox">
+					 <label><input type="checkbox" />是否上架</label>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputFile">商品图片</label><input type="file" id="exampleInputFile" />
+					<p class="help-block">
+						图片上传
+					</p>
+				</div>
+				<button type="submit" class="btn btn-default">提交</button>
+			</form>
+		</div>
+	</div>
+	</div>
+	
+<script type="text/javascript">
+$(function(){
+	var input = $(".form-control");
+	if(input.val() == "" || $.trim(input.val()) == ""){
+		alert("输入不能为空")
+	}
+});
+
+</script>	
+
+</body>
+</html>

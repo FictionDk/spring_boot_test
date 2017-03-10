@@ -1,0 +1,30 @@
+<!DOCTYPE html>  
+<html xmlns:th="http://www.thymeleaf.org"  
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="bootstrap">  
+<head>  
+    <title>个人中心</title>  
+</head>
+<body>
+	<div th:fragment="content" th:remove="tag">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title" th:text="'用户名:'+${user.userName}">
+						Panel title
+					</h3>
+				</div>
+				<div class="panel-body" th:text="'密码:'+${user.pwd}">
+					Panel content
+				</div>
+				<div class="panel-footer">
+					Panel footer
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

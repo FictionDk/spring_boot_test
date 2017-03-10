@@ -21,34 +21,11 @@ public class SampleController {
 	
 	private static Logger log = LoggerFactory.getLogger(SampleController.class); 
 	
-	@Autowired
-	private SampleService sampleService;
-	
-	@Autowired
-	private UserService userService;
-	
 	@RequestMapping("/test")
 	public String test(Model model){
+		
 		model.addAttribute("hello", "From test Controller");
 		return "test";
 	}
 	
-	@RequestMapping("/index")
-	public String show(Model model){
-		model.addAttribute("hello", "From show Controller");
-		
-		ThymeleafProperties p = new ThymeleafProperties();
-		log.info(p.getPrefix());
-		log.info(p.getSuffix());
-		
-		return "index";
-	}
-	
-	@RequestMapping("/loginAct")
-	public String login(@RequestParam(value="name",required=true)String name,
-			@RequestParam(value="pwd",required=true)String pwd,Model model){
-		 
-		
-		return "sucess";
-	}
 }
